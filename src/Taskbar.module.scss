@@ -1,0 +1,116 @@
+.taskbar {
+	height: 25px;
+	width: 100vw;
+	background: linear-gradient(
+		to bottom,
+		rgba(77, 42, 77, 1) 0px,
+		rgba(198, 153, 198, 1) 4%,
+		rgba(191, 143, 191, 1) 16%,
+		rgba(183, 134, 183, 1) 20%,
+		rgba(167, 112, 167, 1) 36%,
+		rgba(160, 102, 160, 1) 40%,
+		rgba(151, 91, 151, 1) 52%,
+		rgba(125, 57, 125, 1) 56%,
+		rgba(103, 50, 103, 1) 80%,
+		rgba(92, 46, 92, 1) 88%,
+		rgba(87, 45, 87, 1) 96%,
+		rgba(67, 37, 67, 1) 100%
+	);
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	padding-left: 94px;
+	display: flex;
+
+	box-sizing: border-box;
+}
+
+.start_button {
+	all: unset;
+
+	&:hover,
+	&:active,
+	&:focus {
+		box-shadow: unset !important;
+		outline: none;
+		background: unset;
+	}
+
+	position: fixed;
+
+	bottom: 0;
+	left: 0;
+
+	height: 25px;
+	width: 84px;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(assets/start-button.png) !important;
+
+	&:hover {
+		background-position: 0 -25px;
+	}
+
+	&:active,
+	&.toggle {
+		background-position: 0 -50px;
+	}
+}
+
+.windows {
+	overflow: hidden;
+	flex: 1 1 0%;
+	height: 100%;
+	display: flex;
+}
+
+.sys_tray {
+	background: linear-gradient(
+		to bottom,
+		rgba(253, 251, 253, 1) 0%,
+		rgba(240, 230, 240, 1) 17%,
+		rgba(235, 223, 235, 1) 25%,
+		rgba(230, 215, 230, 1) 29%,
+		rgba(219, 202, 219, 1) 42%,
+		rgba(213, 196, 213, 1) 46%,
+		rgba(199, 173, 199, 1) 50%,
+		rgba(191, 161, 191, 1) 54%,
+		rgba(171, 134, 171, 1) 71%,
+		rgba(162, 122, 162, 1) 75%,
+		rgba(152, 109, 152, 1) 83%,
+		rgba(134, 80, 134, 1) 96%,
+		rgba(152, 116, 152, 1) 100%
+	);
+	width: 130px;
+	height: 25px;
+	margin-top: 1px;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 1px;
+		height: 100%;
+		background: white;
+		opacity: 0.1;
+	}
+
+	flex-shrink: 0;
+	padding: 0px 10px;
+	margin-left: 10px;
+
+	display: flex;
+	-moz-box-align: center;
+	align-items: center;
+
+	.time {
+		margin: 0px 5px;
+		color: black;
+		font-size: 11px;
+		font-weight: lighter;
+		text-shadow: none;
+		font-size: 11px;
+		font-family: Tahoma, "Noto Sans", sans-serif;
+	}
+}

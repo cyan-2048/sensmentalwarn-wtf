@@ -1,0 +1,173 @@
+/*-------------------------------------------*\
+    Window
+\*-------------------------------------------*/
+
+.window {
+	box-shadow: 
+	// outer down right
+	// outer up left
+	// middle down right
+	// middle up left
+	// inner down right
+	// inner up left
+		inset -1px -1px #c376c3, inset 1px 1px #c376c3, inset -2px -2px #d49ad4, inset 2px 2px #d6a9d6, inset -3px -3px #d49ad4, inset 3px 3px #d49ad4;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	padding: 0 0 3px 0;
+	-webkit-font-smoothing: antialiased;
+}
+.title-bar {
+	font-family: "Trebuchet MS";
+	background: linear-gradient(
+		to bottom,
+		rgba(221, 173, 221, 1) 0%,
+		rgba(213, 155, 213, 1) 4%,
+		rgba(203, 133, 203, 1) 30%,
+		rgba(204, 130, 204, 1) 35%,
+		rgba(191, 116, 191, 1) 48%,
+		rgba(174, 91, 174, 1) 52%,
+		rgba(164, 84, 164, 1) 65%,
+		rgba(163, 86, 163, 1) 70%,
+		rgba(158, 82, 158, 1) 78%,
+		rgba(147, 75, 147, 1) 91%,
+		rgba(147, 74, 147, 1) 100%
+	);
+	padding: 3px 5px 3px 3px;
+	border-top: 1px solid #8e478e;
+	border-left: 1px solid #8e478e;
+	border-right: 1px solid #8e478e;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 7px;
+	font-size: 13px;
+	text-shadow: 1px 1px #8e478e;
+	height: 21px;
+}
+
+.title-bar-text {
+	padding-left: 3px;
+}
+
+.title-bar-controls {
+	display: flex;
+	button {
+		min-width: 21px;
+		min-height: 21px;
+		margin-left: 2px;
+		background-repeat: no-repeat;
+		background-position: center;
+		box-shadow: none;
+		border: none;
+		&:active,
+		&:hover,
+		&:focus {
+			box-shadow: none !important;
+		}
+	}
+
+	button {
+		&[aria-label="Maximize"]::before {
+			background-image: url("../assets/maximize-sprite.png");
+		}
+		&[aria-label="Restore"]::before {
+			background-image: url("../assets/restore-sprite.png");
+		}
+		&[aria-label="Minimize"]::before {
+			background-image: url("../assets/minimize-sprite.png");
+		}
+	}
+
+	button[aria-label="Maximize"],
+	button[aria-label="Restore"],
+	button[aria-label="Minimize"] {
+		&::before {
+			content: "";
+			position: absolute;
+			width: 13px;
+			height: 13px;
+			overflow: hidden;
+			top: 4px;
+			left: 4px;
+			z-index: 0;
+			background-position-y: 0;
+		}
+
+		&:hover::before {
+			background-position-y: -39px;
+		}
+		&:active::before {
+			background-position-y: -65px;
+		}
+
+		position: relative;
+
+		background-image: url("../assets/titlebar-btn-bg.bmp") !important;
+		background-position-y: 0;
+
+		&:hover:not(:active) {
+			background-position-y: -21px;
+		}
+		&:not(:disabled):active {
+			background-position-y: -42px;
+		}
+	}
+
+	button[aria-label="Help"] {
+		background-image: url("./icon/help.svg");
+		&:hover {
+			background-image: url("./icon/help-hover.svg");
+		}
+		&:not(:disabled):active {
+			background-image: url("./icon/help-active.svg");
+		}
+	}
+
+	button[aria-label="Close"] {
+		background-image: url("../assets/titlebar-close-btn-bg.bmp") !important;
+		background-position-y: 0;
+
+		&:hover:not(:active) {
+			background-position-y: -21px;
+		}
+		&:not(:disabled):active {
+			background-position-y: -42px;
+		}
+
+		position: relative;
+
+		&::before {
+			background-image: url("../assets/close-sprite.png");
+			content: "";
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			overflow: hidden;
+			top: 3px;
+			left: 3px;
+			z-index: 0;
+			background-position-y: 0;
+			background-size: 100%;
+		}
+	}
+}
+
+.status-bar {
+	margin: 0 3px;
+	box-shadow: inset 0px 1px 2px var(--button-shadow);
+	padding: 2px 1px;
+	gap: 0px;
+}
+
+.status-bar-field {
+	font-family: var(--sans-serif);
+	-webkit-font-smoothing: antialiased;
+	box-shadow: none;
+	padding: 1px 2px;
+	border-right: 1px solid rgba(208, 206, 191, 0.75);
+	border-left: 1px solid rgba(255, 255, 255, 0.75);
+	&:first-of-type {
+		border-left: none;
+	}
+	&:last-of-type {
+		border-right: none;
+	}
+}
