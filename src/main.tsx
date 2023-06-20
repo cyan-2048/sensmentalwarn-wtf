@@ -1,5 +1,28 @@
-import { render } from "preact";
-import { App } from "./App.tsx";
+import { Fragment, render } from "preact";
+
+import Desktop from "./Desktop";
+import Taskbar from "./Taskbar";
+import { windows } from "@WindowManager";
+
+function Windows() {
+	return (
+		<>
+			{windows.value.map((window) => (
+				<Fragment key={window._window_id}>{window.component}</Fragment>
+			))}
+		</>
+	);
+}
+
+export function App() {
+	return (
+		<main style={{ width: "100vw", height: "100vh" }}>
+			<Desktop />
+			<Windows />
+			<Taskbar />
+		</main>
+	);
+}
 
 /**
  * import polyfills manually

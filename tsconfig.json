@@ -18,7 +18,12 @@
 
 		"paths": {
 			"react": ["./node_modules/preact/compat/"],
-			"react-dom": ["./node_modules/preact/compat/"]
+			"react-dom": ["./node_modules/preact/compat/"],
+			"@WindowManager": ["./src/lib/WindowManager.tsx"],
+			"@apps/*": ["./src/apps/*"],
+			"@utils": ["./src/lib/utils.ts"],
+			"@signals": ["./src/lib/signals.ts"],
+			"@assets/*": ["./src/assets/*"]
 		},
 
 		"types": ["vite/client"]

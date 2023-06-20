@@ -1,0 +1,33 @@
+.main {
+	padding: 12px;
+}
+
+.top {
+	height: 46px;
+	width: 350px;
+
+	display: flex;
+	flex: 1 1 0%;
+
+	img {
+		height: 30px;
+		width: 30px;
+		pointer-events: none;
+	}
+
+	& > div {
+		padding: 2px 20px 12px;
+		div {
+			line-height: 16px;
+		}
+	}
+}
+
+.button_wrapper {
+	display: flex;
+	justify-content: center;
+
+	button {
+		width: 80px;
+	}
+}

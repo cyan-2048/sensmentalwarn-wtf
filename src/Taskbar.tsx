@@ -1,7 +1,7 @@
 import { useToggle } from "react-use";
 import styles from "./Taskbar.module.scss";
-import { clxArr } from "./lib/utils";
-import { startMenuOpen, time, toggleStartMenu } from "./lib/WindowManager";
+import { clxArr } from "@utils";
+import { startMenuOpen, time, toggleStartMenu } from "@WindowManager";
 
 function StartButton() {
 	return <button onClick={toggleStartMenu} class={clxArr(styles.start_button, startMenuOpen.value && styles.toggle)}></button>;
